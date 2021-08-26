@@ -1,0 +1,43 @@
+
+ <mat-toolbar>
+    <div class="landing-banner-content">
+      <h1>Community In 3D</h1>
+      <h3>Connecting you to a network of consumers and creators of 3D printing services.</h3>
+      <button mat-raised-button routerLink="/get-started" routerLinkActive="active">Get started</button>
+    </div>
+  </mat-toolbar>
+
+  <div class="landing-container">
+  <div class="landing-body">
+    <h2>
+      What's Popular
+      <hr>
+    </h2>
+
+    <mat-grid-list cols="4" rowHeight="1:1.25" gutterSize="20px">
+      <mat-grid-tile
+        *ngFor="let service of services">
+        <div class="popular-container">
+        <button mat-button>
+          <!-- need to add redirect-->
+        <!-- <mat-card class="product-card" [class.mat-elevation-z15]="!isActive">-->
+              <img id="image" src={{service.image}} width="400" height="250">
+              <p id="image-text">
+              {{service.service}}
+              </p>
+            </button>
+          </div>
+              <!--<mat-card-subtitle></mat-card-subtitle>
+              <mat-card-footer>
+              </mat-card-footer>
+        </mat-card>-->
+
+        </mat-grid-tile>
+      </mat-grid-list>
+      <h2>
+        Learn About
+        <hr>
+      </h2>
+  </div>
+</div>
+

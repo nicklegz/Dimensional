@@ -1,0 +1,25 @@
+<div *ngIf="!enabled" class="auth-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card color="accent" class="auth-card">
+
+<div class="login-form">
+  <mat-card-header>
+    <mat-card-title>Welcome back!</mat-card-title>
+  </mat-card-header>
+
+    <mat-card-content>
+      <mat-form-field color="accent">
+        <input matInput placeholder="Username">
+      </mat-form-field>
+
+      <mat-form-field color="accent">
+        <input matInput type="password" placeholder="Password">
+      </mat-form-field>
+      <a mat-flat-button class="forgot-pass">Forgot your password?</a>
+    </mat-card-content>
+
+      <button mat-raised-button color="accent" class="login-button">Sign in</button>
+
+</div>
+</mat-card>
+</div>

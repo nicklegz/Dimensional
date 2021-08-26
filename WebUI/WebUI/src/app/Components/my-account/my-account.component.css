@@ -1,0 +1,47 @@
+mat-toolbar{
+  height: 150px;
+  background-color: #252527;
+  display: flex;
+}
+
+h1{
+  font-size: xxx-large;
+}
+
+.my-account-header-content{
+  display: flex;
+  width: 1550px;
+  margin: 0 auto;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  flex-direction: column;
+}
+
+.file-input {
+  display: none;
+}
+
+.my-account-body{
+  display: flex;
+  width: 1550px;
+  margin: 0 auto;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  flex-direction: column;
+}
+
+h2{
+  color: #252527;
+  font-size: x-large;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+mat-tab{
+  background-color: #252527;
+  margin-top: 10px;
+}

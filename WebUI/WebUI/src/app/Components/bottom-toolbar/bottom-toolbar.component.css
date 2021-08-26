@@ -1,0 +1,21 @@
+.main-bottom-toolbar mat-toolbar{
+  background-color: #252527;
+}
+
+mat-toolbar{
+  height: 40vh;
+}
+.bottom-toolbar-content{
+   width: 1600px;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   font-size: 60%;
+   white-space: normal;
+   justify-content: space-evenly;
+}
+
+.companyTag{
+  margin-right: 50px;
+}
+

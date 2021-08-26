@@ -1,0 +1,9 @@
+.container{
+  height: 100vh;
+  display: block;
+}
+.footer{
+  width: 100%;
+  position: relative;
+  bottom: calc(-30vh);
+}

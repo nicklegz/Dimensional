@@ -1,0 +1,95 @@
+.marketplace-header-content{
+  display: flex;
+  width: 1550px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+h1{
+  font-size: xxx-large;
+}
+
+mat-toolbar{
+  height: 150px;
+  background-color: #252527;
+}
+
+mat-menu{
+  background-color: #ffffff;
+}
+
+::ng-deep .mat-checkbox-frame {
+  border-color: #252527;
+}
+
+.marketplace{
+  display: flex;
+}
+
+.marketplace-content{
+  display: flex;
+  width: 1550px;
+  margin: 0 auto;
+}
+
+mat-tree{
+  margin-top: 50px;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
+::ng-deep .mat-tree{
+  border-color: #252527;
+}
+
+button{
+  color: #252527;
+  font-weight: bold;
+}
+
+mat-tree-node{
+  color: #252527;
+  font-weight: bold;
+  font-size: large;
+}
+.marketplace-filters{
+  width: 20%;
+}
+
+.marketplace-items{
+  width: 80%;
+  flex-direction: column;
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+mat-grid-list{
+  margin: 0 auto;
+}
+
+mat-card{
+  margin-top: 80px;
+  height: 400px;
+}
+
+mat-card-footer{
+  text-align: center;
+}
+
+.product-image{
+  display: flex;
+  justify-content: space-between;
+  object-fit: cover;
+}
+
+mat-icon{
+  font-size: medium;
+}
+
+b{
+  font-weight: lighter;
+  align-items: center;
+}

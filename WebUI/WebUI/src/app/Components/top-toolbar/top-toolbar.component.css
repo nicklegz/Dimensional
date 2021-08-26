@@ -1,0 +1,70 @@
+.companyName{
+  font-size: 150%;
+  margin-left: 5px;
+}
+
+.top-toolbar-content{
+   width: 1600px;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   vertical-align: middle;
+}
+
+mat-form-field{
+  width: 400px;
+  font-size: medium;
+  margin-top: 6%;
+}
+
+.search-bar{
+  margin-left: 50px;
+}
+
+.menu{
+  font-size: 90%;
+}
+
+.mat-toolbar{
+  height: 100px;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  font-size: 120%;
+  white-space: normal;
+  background-color: transparent;
+}
+
+a:hover {
+  background-color: #505053;
+}
+
+button{
+  font-size: 110%;
+  min-width: min-content;
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: #505053;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.button:hover{
+  background-color: #505053;
+}
+
+.sidenav-button:hover{
+  background-color: #505053;
+}
+
+.times{
+  font-size: 1.25em;
+}
+
+

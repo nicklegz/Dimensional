@@ -1,0 +1,23 @@
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+body{
+  margin: 0;
+  height: 100vh;
+  background-color:#ffffff;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+mat-card{
+  box-shadow: none !important;
+  background-color: #ffffff !important;
+}
+
+mat-card-subtitle{
+  color: #252527 !important;
+  justify-content: left;
+  text-align: left;
+  font-weight: bold;
+}

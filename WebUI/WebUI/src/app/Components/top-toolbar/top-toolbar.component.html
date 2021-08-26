@@ -1,0 +1,42 @@
+<mat-toolbar>
+  <div class="top-toolbar-content">
+    <button mat-flat-button (click)="toggleLeftSidenav()">
+      <div class="times" *ngIf="toggled == true">
+        <fa-icon icon="times"></fa-icon>
+      </div>
+      <div *ngIf="toggled != true">
+        <fa-icon icon="bars"></fa-icon>
+      </div>
+    </button>
+
+    <button mat-flat-button routerLink="" routerLinkActive="active" class="companyName">Dimensional</button>
+
+    <div class="search-bar">
+      <mat-form-field class="search" color="accent" appearance="fill">
+        <mat-label>Search for...</mat-label>
+        <input matInput type="text">
+            <button mat-icon-button matSuffix>
+              <mat-icon>search</mat-icon>
+            </button>
+      </mat-form-field>
+    </div>
+    <span class="spacer"></span>
+
+    <!-- Navbar links -->
+      <a mat-button routerLink="/marketplace" routerLinkActive="active">Marketplace</a>
+      <a mat-button routerLink="/community" routerLinkActive="active">Community</a>
+
+      <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+        <button mat-button (click)="auth.logout({ returnTo: document.location.origin })">
+          <mat-icon>supervisor_account</mat-icon>
+          Log out
+        </button>
+      </ng-container>
+
+      <ng-template #loggedOut>
+        <button mat-button (click)="auth.loginWithRedirect()"><mat-icon>supervisor_account</mat-icon> Log in</button>
+      </ng-template>
+
+    </div>
+</mat-toolbar>
+

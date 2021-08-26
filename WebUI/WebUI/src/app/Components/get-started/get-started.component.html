@@ -1,0 +1,28 @@
+<div class="get-started-container">
+  <div class="get-started-banner">
+    <div class="get-started-banner-content">
+      <h1>Get Started</h1>
+      <h3>Consume or Create a 3D printing service.</h3>
+    </div>
+  </div>
+  <div class="get-started-body">
+    <mat-card class="product-card" [class.mat-elevation-z15]="!isActive">
+      <mat-card-title></mat-card-title>
+      <img mat-card-image src={{consume.image}} width="200" height="250">
+        <mat-card-footer>
+         <mat-card-content>{{consume.text}}</mat-card-content>
+         <button mat-button (click)="auth.loginWithRedirect()" mat-raised-button>{{consume.buttonText}}</button>
+        </mat-card-footer>
+      </mat-card>
+
+      <mat-card class="product-card" [class.mat-elevation-z15]="!isActive">
+        <mat-card-title></mat-card-title>
+        <img mat-card-image src={{create.image}} width="200" height="250">
+        <mat-card-footer>
+          <mat-card-content>{{create.text}}</mat-card-content>
+          <button mat-raised-button routerLink="/marketplace" routerLinkActive="active">{{create.buttonText}}</button>
+        </mat-card-footer>
+      </mat-card>
+
+  </div>
+</div>
