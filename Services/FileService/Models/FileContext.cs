@@ -15,6 +15,5 @@ namespace FileService.Models
         {
             modelBuilder.Entity<File>().ToTable("File");
         }
-        
     }
 }

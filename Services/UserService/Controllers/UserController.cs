@@ -6,9 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UserService.DTOs;
-using UserService.Extensions;
 using UserService.Models;
-using UserService.Repositories;
+using UserService.Interfaces;
 
 namespace UserService.Controllers
 {
@@ -63,7 +62,6 @@ namespace UserService.Controllers
             User user = new()
             {
                 Username = userDTO.Username,
-                Password = userDTO.Password,
                 FirstName = userDTO.FirstName,
                 LastName = userDTO.LastName,
                 OrganizationName = userDTO.OrganizationName
@@ -88,7 +86,6 @@ namespace UserService.Controllers
             User updatedUser = existingUser with
             {
                 Username = userDTO.Username,
-                Password = userDTO.Password,
                 FirstName = userDTO.FirstName,
                 LastName = userDTO.LastName,
                 OrganizationName = userDTO.OrganizationName

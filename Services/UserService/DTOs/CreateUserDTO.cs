@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace UserService.DTOs
 {
@@ -11,10 +7,6 @@ namespace UserService.DTOs
     {
         [Required]
         public string Username { get; set; }
-
-        [Required]
-        [JsonIgnore]
-        public string Password { get; set; }
         
         [Required]
         public string FirstName { get; set; }

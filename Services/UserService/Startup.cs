@@ -15,6 +15,7 @@ using UserService.Repositories;
 using Microsoft.EntityFrameworkCore;
 using UserService.Models;
 using UserService.Extensions;
+using UserService.Interfaces;
 
 namespace UserService
 {

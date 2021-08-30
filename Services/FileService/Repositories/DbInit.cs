@@ -19,7 +19,7 @@ namespace FileService.Repositories
 
             var users = new File[]
             {
-                new File{ Id = 1 ,UserId = Guid.Parse("844d024c-a958-11eb-bcbc-0242ac130002"), Name="TestFile.jpg", Path="", Extension=".jpg"}
+                new File{ Id = Guid.Parse("844d024c-a958-11eb-bcbc-0242ac130004"),UserId = Guid.Parse("844d024c-a958-11eb-bcbc-0242ac130002"), Name="TestFile.jpg", Path="", Extension=".jpg"}
             };
 
             foreach(File u in users)

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using UserService.DTOs;
 using UserService.Models;
-using UserService.Repositories;
+using UserService.Interfaces;
 
 namespace UserService.Extensions
 {
@@ -31,7 +31,6 @@ namespace UserService.Extensions
 
         public async Task<ReadUserDTO> CreateUser(User user)
         {
-            
             user.Id = Guid.NewGuid();
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
@@ -51,7 +50,6 @@ namespace UserService.Extensions
             {
                 Id = user.Id,
                 Username = user.Username,
-                Password = user.Password,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 OrganizationName = user.OrganizationName
@@ -68,7 +66,6 @@ namespace UserService.Extensions
                 {
                     Id = u.Id,
                     Username = u.Username,
-                    Password = u.Password,
                     FirstName = u.FirstName,
                     LastName = u.LastName,
                     OrganizationName = u.OrganizationName
