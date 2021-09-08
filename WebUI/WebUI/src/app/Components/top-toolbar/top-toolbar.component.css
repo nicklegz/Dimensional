@@ -1,5 +1,5 @@
 .companyName{
-  font-size: 150%;
+  font-size: 120%;
   margin-left: 5px;
 }
 
@@ -13,26 +13,26 @@
 
 mat-form-field{
   width: 400px;
-  font-size: medium;
-  margin-top: 6%;
 }
 
 .search-bar{
+  margin-top: 10px;
   margin-left: 50px;
+  font-size: 11px;
 }
 
 .menu{
-  font-size: 90%;
+  font-size: 70%;
 }
 
 .mat-toolbar{
-  height: 100px;
+  height: 80px;
   overflow: hidden;
 }
 
 a {
   text-decoration: none;
-  font-size: 120%;
+  font-size: 100%;
   white-space: normal;
   background-color: transparent;
 }
@@ -42,7 +42,7 @@ a:hover {
 }
 
 button{
-  font-size: 110%;
+  font-size: 100%;
   min-width: min-content;
   background-color: transparent;
 }
