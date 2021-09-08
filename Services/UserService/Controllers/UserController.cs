@@ -39,7 +39,7 @@ namespace UserService.Controllers
             return Ok(users);
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ReadUserDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ReadUserDTO>> GetUser(Guid id)

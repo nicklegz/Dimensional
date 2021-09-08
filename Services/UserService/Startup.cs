@@ -31,7 +31,7 @@ namespace UserService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<UserContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DevConnection")));
+            services.AddDbContext<UserContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DockerConnection")));
 
             services.AddTransient<IUserExtensions, UserExtensions>();
             
@@ -51,7 +51,6 @@ namespace UserService
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "UserService v1"));
-                app.UseDeveloperExceptionPage();
             }
 
             // app.UseHttpsRedirection();

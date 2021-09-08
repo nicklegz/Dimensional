@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using FileService.Interfaces;
+using FileService.Extensions;
 
 namespace FileService
 {
@@ -28,7 +30,9 @@ namespace FileService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<FileContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DevConnection")));
+            services.AddDbContext<FileContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DockerConnection")));
+
+            services.AddTransient<IFileExtensions, FileExtensions>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -47,7 +51,7 @@ namespace FileService
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FileService v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

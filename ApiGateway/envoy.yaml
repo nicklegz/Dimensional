@@ -12,7 +12,7 @@ static_resources:
       - name: envoy.filters.network.http_connection_manager
         typed_config:
           "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
-          stat_prefix: ingress_http
+          stat_prefix: http_proxy
           codec_type: AUTO
           route_config:
             name: local_route
@@ -21,15 +21,18 @@ static_resources:
               domains: ["*"]
               routes:
               - match: 
-                  prefix: "/"
+                  prefix: "/api/user"
                 route: 
-                  prefix_rewrite: "/api/user"
                   cluster: user_service
+              - match: 
+                  prefix: "/api/file"
+                route: 
+                  cluster: file_service
           http_filters:
           - name: envoy.filters.http.router
   clusters:
   - name: user_service
-    connect_timeout: 0.25s
+    connect_timeout: 1s
     type: LOGICAL_DNS
     lb_policy: ROUND_ROBIN
     load_assignment:
@@ -40,4 +43,17 @@ static_resources:
             address:
               socket_address:
                 address: userservice
+                port_value: 80
+  - name: file_service
+    connect_timeout: 1s
+    type: LOGICAL_DNS
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: file_service
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: fileservice
                 port_value: 80

@@ -17,12 +17,12 @@ namespace FileService.Repositories
                 return;
             }
 
-            var users = new File[]
+            var files = new File[]
             {
                 new File{ Id = Guid.Parse("844d024c-a958-11eb-bcbc-0242ac130004"),UserId = Guid.Parse("844d024c-a958-11eb-bcbc-0242ac130002"), Name="TestFile.jpg", Path="", Extension=".jpg"}
             };
 
-            foreach(File u in users)
+            foreach(File u in files)
             {
                 context.Files.Add(u);
             }

@@ -26,7 +26,7 @@ namespace FileService.Controllers
             _extensions = extensions;
         }
 
-        //GET /user
+        //GET /file
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<ReadFileDTO>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
