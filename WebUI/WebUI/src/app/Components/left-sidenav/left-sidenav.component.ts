@@ -1,3 +1,4 @@
+import { FocusMonitor } from '@angular/cdk/a11y';
 import { DOCUMENT } from '@angular/common';
 import { AfterViewInit, Component, Inject, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
@@ -18,7 +19,7 @@ export class LeftSidenavComponent implements AfterViewInit{
   }
 
   ngAfterViewInit() {
-    this.navService.setSidenav(this.leftDrawer)
+    this.navService.setSidenav(this.leftDrawer);
   }
 
 }

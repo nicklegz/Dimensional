@@ -1,34 +1,18 @@
 mat-toolbar{
-  display: flex;
   height: 300px;
   background-color: #252527;
   width: 100%;
 }
 
-mat-toolbar button{
-  max-width: 150px;
-}
-
 .landing-banner-content{
-  display: flex;
   flex-direction: column;
   margin: 0 auto;
-  align-items: left;
-  text-align: left;
-  justify-content: left;
-  width: 1600px;
-}
-
-.landing-container{
-  display: flex;
+  width: 1400px;
 }
 
 .landing-body{
   margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 1600px;
-  flex-direction: column;
+  width: 1400px;
 }
 
 h1{
