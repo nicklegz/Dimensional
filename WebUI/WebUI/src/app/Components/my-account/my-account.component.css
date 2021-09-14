@@ -5,17 +5,16 @@ mat-toolbar{
 }
 
 h1{
-  font-size: xxx-large;
+  font-size: xx-large;
 }
 
 .my-account-header-content{
   display: flex;
-  width: 1550px;
+  width: 1600px;
   margin: 0 auto;
   align-items: left;
   justify-content: left;
   text-align: left;
-  flex-direction: column;
 }
 
 .file-input {
@@ -24,24 +23,42 @@ h1{
 
 .my-account-body{
   display: flex;
-  width: 1550px;
+  width: 1600px;
   margin: 0 auto;
   align-items: left;
   justify-content: left;
   text-align: left;
-  flex-direction: column;
 }
 
 h2{
-  color: #252527;
-  font-size: x-large;
-  margin-left: 5px;
-  margin-bottom: 20px;
-  margin-top: 40px;
   font-weight: bold;
 }
 
-mat-tab{
+.file-upload{
+  margin-top: 20px;
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels {
+  display: flex;
+  margin: 0 auto;
+  color:white;
+  width: 1600px;
   background-color: #252527;
-  margin-top: 10px;
+  font-size: large;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button{
+  font-size: large;
+}
+
+button:hover{
+  background-color: #505053;
+}
+
+::ng-deep .mat-checkbox-frame {
+  border-color: #252527;
 }

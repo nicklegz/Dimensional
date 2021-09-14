@@ -27,10 +27,7 @@
       <a mat-button routerLink="/community" routerLinkActive="active">Community</a>
 
       <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-        <button mat-button (click)="auth.logout({ returnTo: document.location.origin })">
-          <mat-icon>supervisor_account</mat-icon>
-          Log out
-        </button>
+        <a mat-button routerLink="/my-account" routerLinkActive="active">My Account</a>
       </ng-container>
 
       <ng-template #loggedOut>

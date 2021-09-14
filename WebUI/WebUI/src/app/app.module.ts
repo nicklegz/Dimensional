@@ -33,6 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MyAccountComponent } from './Components/my-account/my-account.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { MyAccountComponent } from './Components/my-account/my-account.component
     MatListModule,
     MatTreeModule,
     CdkTreeModule,
+    MatRadioModule,
+    FormsModule,
     AuthModule.forRoot({
       domain: 'nicklegz.us.auth0.com',
       clientId: 'xYdy7XnvkCdtQGPQ10nFpLJO2qkJSa2A'
