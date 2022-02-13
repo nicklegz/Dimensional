@@ -1,28 +1,27 @@
 version: '3.1'
 services:
   user_service:
-    container_name: user_service
+    container_name: file_service
     build: .
     ports:
-      - "8000:80"
+      - "8001:80"
     environment: 
       ASPNETCORE_URLS: "http://+"
-      ASPNETCORE_HTTPS_PORT: "8000"
+      ASPNETCORE_HTTPS_PORT: "8001"
       ASPNETCORE_ENVIRONMENT: "Development"
     volumes:
-      # - $APPDATA/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+       - $APPDATA/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      #- ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
     depends_on:
       - db
   db:
-    container_name: user_service_db
-    image: postgres:10-alpine
+    container_name: file_service_db
+    image: mongo
     restart: always
     ports:
-      - 5433:5432
+      - 27017:27017
     environment:
-      POSTGRES_USER: "${POSTGRES_USER}"
-      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
-      POSTGRES_DB: "${POSTGRES_DB}"
+      MONGO_INITDB_ROOT_USERNAME: "${MONGO_INITDB_ROOT_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGO_INITDB_ROOT_PASSWORD}"
     volumes:
-       - ./PostgresData:/var/lib/postgresql/data
+       - ./MongoData:/data/db
