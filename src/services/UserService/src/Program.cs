@@ -1,5 +1,4 @@
 using Infrastructure;
-using Microsoft.EntityFrameworkCore;
 using Repositories.Interfaces;
 using Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -12,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 CorsPolicyConfig.ConfigureCorsPolicy(builder.Services, "CorsPolicy");
 
-builder.Services.AddNpgsql<AppDbContext>(builder.Configuration["MyDollar:DBConnectionString"]);
+builder.Services.AddNpgsql<AppDbContext>(builder.Configuration[ConfigConsts.DbConnectionStringKeyName]);
 
 builder.Configuration.AddEnvironmentVariables();
 
@@ -33,8 +32,8 @@ builder.Services.AddAuthentication(auth =>
     jwt.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
-        ValidIssuer = builder.Configuration["TokenConfig:Issuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["MyDollar:UserKey"])),
+        ValidIssuer = builder.Configuration[ConfigConsts.IssuerKeyName],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration[ConfigConsts.CryptoKeyName])),
         ClockSkew = TimeSpan.FromMinutes(1)
     };
 });

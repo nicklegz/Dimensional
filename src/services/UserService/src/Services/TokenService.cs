@@ -3,6 +3,7 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Models;
 using System.Security.Claims;
+using Config;
 
 namespace Services;
 
@@ -14,7 +15,7 @@ public class TokenService : ITokenService
     public TokenService(IConfiguration configuration)
     {
         _configuration = configuration;
-        _secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["MyDollar:UserKey"]));
+        _secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration[ConfigConsts.CryptoKeyName]));
     }
 
     public string GenerateToken(User user)
@@ -27,7 +28,7 @@ public class TokenService : ITokenService
                 new Claim(ClaimTypes.Name, user.Username)
             }),
 
-            Issuer = _configuration["TokenConfig:Issuer"],
+            Issuer = _configuration[ConfigConsts.IssuerKeyName],
 
             Expires = DateTime.UtcNow.AddMinutes(Convert.ToInt32(20)),
 
@@ -52,7 +53,7 @@ public class TokenService : ITokenService
                 return null;
             }
 
-            var symmetricKey = Convert.FromBase64String(_configuration["MyDollar:UserKey"]);
+            var symmetricKey = Convert.FromBase64String(_configuration[ConfigConsts.CryptoKeyName]);
 
             var validationParameters = new TokenValidationParameters()
             {
