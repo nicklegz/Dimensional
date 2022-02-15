@@ -10,8 +10,8 @@ public class File
     [BsonElement("id")]
     public int Id { get; set; }
 
-    [BsonElement("user_id")]
-    public Guid UserId { get; set; }
+    [BsonElement("username")]
+    public string Username { get; set; }
 
     [BsonElement("name")]
     public string Name { get; set; }

@@ -44,7 +44,7 @@ public class UserController : ControllerBase
                 break;
             
             case PasswordVerificationResult.Success:
-            break;
+                break;
         }
 
         string accessToken = _tokenService.GenerateToken(user);
