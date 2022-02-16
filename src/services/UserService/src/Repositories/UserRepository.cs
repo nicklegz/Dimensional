@@ -32,4 +32,10 @@ public class UserRepository : IUserRepository
         _context.Update(user);
         await _context.SaveChangesAsync();
     }
+
+    public async Task DeleteAsync(User user)
+    {
+        _context.Remove(user);
+        await _context.SaveChangesAsync();
+    }
 }

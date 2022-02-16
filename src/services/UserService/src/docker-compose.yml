@@ -10,8 +10,8 @@ services:
       ASPNETCORE_HTTPS_PORT: "8000"
       ASPNETCORE_ENVIRONMENT: "Development"
     volumes:
-      # - $APPDATA/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+       - $APPDATA/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      #- ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
     depends_on:
       - db
   db:

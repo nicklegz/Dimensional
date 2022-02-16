@@ -1,6 +1,6 @@
 version: '3.1'
 services:
-  user_service:
+  file_service:
     container_name: file_service
     build: .
     ports:
